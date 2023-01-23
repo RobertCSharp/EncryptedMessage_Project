@@ -24,49 +24,51 @@ namespace EncryptedMessage_Project
             string encryptedText = "!) %^u$d @h) @*rg)@'# l^c*@&^$. !*&@&$g %^r @h) $)x@ m&##&^$..";
             Console.WriteLine(DecryptText(encryptedText));
             Console.WriteLine(DecrypText2(encryptedText));
+
+            Console.ReadKey();
         }
 
         static string DecryptText(string text)
         {
-            string result = "";
+            StringBuilder result = new StringBuilder();
             for (int i = 0; i < text.Length; i++)
             {
                 switch (text[i])
                 {
                     case '*':
-                        result += 'a';
+                        result.Append('a');
                         break;
                     case '@':
-                        result += 't';
+                        result.Append('t');
                         break;
                     case '!':
-                        result += 'W';
+                        result.Append('W'); ;
                         break;
                     case '^':
-                        result += 'o';
+                        result.Append('o');
                         break;
                     case '&':
-                        result += 'i';
+                        result.Append('i');
                         break;
                     case '%':
-                        result += 'f';
+                        result.Append('f');
                         break;
                     case ')':
-                        result += 'e';
+                        result.Append('e');
                         break;
                     case '#':
-                        result += 's';
+                        result.Append('s');
                         break;
                     case '$':
-                        result += 'n';
+                        result.Append('n');
                         break;
                     default:
-                        result += text[i];
+                        result.Append(text[i]);
                         break;
                 }
             }
 
-            return result;
+            return result.ToString();
         }
 
         static string DecrypText2(string text)

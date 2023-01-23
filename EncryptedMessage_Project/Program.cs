@@ -23,6 +23,7 @@ namespace EncryptedMessage_Project
 
             string encryptedText = "!) %^u$d @h) @*rg)@'# l^c*@&^$. !*&@&$g %^r @h) $)x@ m&##&^$..";
             Console.WriteLine(DecryptText(encryptedText));
+            Console.WriteLine(DecrypText2(encryptedText));
         }
 
         static string DecryptText(string text)
@@ -66,6 +67,19 @@ namespace EncryptedMessage_Project
             }
 
             return result;
+        }
+
+        static string DecrypText2(string text)
+        {
+            return text.Replace('*', 'a')
+                .Replace('@', 't')
+                .Replace('!', 'W')
+                .Replace('^', 'o')
+                .Replace('&', 'i')
+                .Replace('%', 'f')
+                .Replace(')', 'e')
+                .Replace('#', 's')
+                .Replace('$', 'n');
         }
     }
 }
